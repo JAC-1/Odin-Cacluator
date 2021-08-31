@@ -35,7 +35,7 @@ let n = "";
 keys.forEach((key) => {
   key.addEventListener("click", () => {
     let value = key.getAttribute("value");
-    if (keyPressCount < 15 && value != ".") {
+    if (keyPressCount < 14 && value != ".") {
       let scrNum = document.createElement("p");
       scr.classList.add("screen-num");
       scrNum.textContent = value;
@@ -47,13 +47,11 @@ keys.forEach((key) => {
     });
 });
 
-// check if period is present
-// dde = does dot exist
 
 let zeroButton = document.querySelector(".zero");
 zeroButton.addEventListener("click", () => {
   let value = zeroButton.getAttribute("value");
-  if (keyPressCount < 15) {
+  if (keyPressCount < 14) {
     let scrNum = document.createElement("p");
     scr.classList.add("screen-num");
     scrNum.textContent = value;
@@ -63,11 +61,13 @@ zeroButton.addEventListener("click", () => {
   }
 });
 
+// Add period/dot, but make sure one isn't already present. 
+
 const DOT = document.querySelector("#dot");
 let dde = false;
 DOT.addEventListener("click", () => {
     let value = DOT.getAttribute("value");
-    if (keyPressCount < 15 && dde == false) {
+    if (keyPressCount < 14 && dde == false) {
         let scrNum = document.createElement("p");
         scr.classList.add("screen-num");
         scrNum.textContent = value;
@@ -84,12 +84,9 @@ if (scrNum.length > 8) {
   console.log("over");
 }
 
-// Get all numbers and display them
 
 
-
-// On click of opperator,
-// next number button clears
+// Actually do some math
 let num1 = "";
 let num2 = "";
 const SCREEN = document.querySelector(".screen");
@@ -126,8 +123,6 @@ MULTIPLY.addEventListener("click", () => {
 
 PLUSE.addEventListener("click", () => {
     opp = "+";
-    // insert functions here to get num and do somethings with it
-    // make sure to update total and clear screen when necessary
     if (num1.length == 0) {
         num1 = n;
         SCREEN.innerHTML = "";
@@ -146,8 +141,6 @@ PLUSE.addEventListener("click", () => {
 
 MINUS.addEventListener("click", () => {
     opp = "-";
-    // insert functions here to get num and do somethings with it
-    // make sure to update total and clear screen when necessary
     if (num1.length == 0) {
         num1 = n;
         SCREEN.innerHTML = "";
@@ -166,8 +159,6 @@ MINUS.addEventListener("click", () => {
 
 DEVIDE.addEventListener("click", () => {
     opp = "/";
-    // insert functions here to get num and do somethings with it
-    // make sure to update total and clear screen when necessary
     if (num1.length == 0) {
         num1 = n;
         SCREEN.innerHTML = "";
